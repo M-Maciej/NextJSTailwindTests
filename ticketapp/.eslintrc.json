@@ -1,0 +1,7 @@
+{
+  "extends": ["next", "plugin:prettier/recommended"],
+  "rules": {
+    "linebreak-style": ["error", "windows"]
+  }
+  
+}
