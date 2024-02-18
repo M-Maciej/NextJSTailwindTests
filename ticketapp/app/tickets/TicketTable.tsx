@@ -8,40 +8,39 @@ interface Props {
 
 const TicketTable = ({tickets}:Props) => {
 
-    console.log(tickets)
   return (
     <div className='w-full mt-5'>
         <div className='rounded-md sm:border'>
-        <Table>
-            <TableHeader>
-                <TableRow>
-                    <TableHead>
-                        Title
-                    </TableHead>
-                    <TableHead>
-                        Status
-                    </TableHead>
-                    <TableHead>
-                        Priority
-                    </TableHead>
-                    <TableHead>
-                        Created At
-                    </TableHead>
-                </TableRow>
-            </TableHeader>
-            <TableBody>
-                {tickets ? (
-                    tickets.map(ticket => (
-                        <TableRow key={ticket.id} data-href="/">
-                            <TableCell>{ticket.title}</TableCell>
-                            <TableCell>{ticket.status}</TableCell> 
-                            <TableCell>{ticket.priority}</TableCell> 
-                            <TableCell>{ticket.createdAt.toDateString()}</TableCell> 
-                        </TableRow>
-                    ))
-                ) : (null)}
-            </TableBody>
-        </Table>
+            <Table>
+                <TableHeader>
+                    <TableRow>
+                        <TableHead>
+                            Title
+                        </TableHead>
+                        <TableHead>
+                            Status
+                        </TableHead>
+                        <TableHead>
+                            Priority
+                        </TableHead>
+                        <TableHead>
+                            Created At
+                        </TableHead>
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
+                    {tickets ? (
+                        tickets.map(ticket => (
+                            <TableRow key={ticket.id} data-href="/">
+                                <TableCell>{ticket.title}</TableCell>
+                                <TableCell>{ticket.status}</TableCell> 
+                                <TableCell>{ticket.priority}</TableCell> 
+                                <TableCell>{ticket.createdAt.toDateString()}</TableCell> 
+                            </TableRow>
+                        ))
+                    ) : (null)}
+             </TableBody>
+            </Table>
         </div>
     </div>
   )
