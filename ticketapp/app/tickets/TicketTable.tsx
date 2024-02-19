@@ -1,4 +1,5 @@
-import TicketStatusBadge from "@/components/TicketStatusBadge";
+import TicketPriority from "@/components/TicketPriority"
+import TicketStatusBadge from "@/components/TicketStatusBadge"
 import {
   Table,
   TableBody,
@@ -6,12 +7,12 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Ticket } from "@prisma/client";
-import React from "react";
+} from "@/components/ui/table"
+import { Ticket } from "@prisma/client"
+import React from "react"
 
 interface Props {
-  tickets: Ticket[];
+  tickets: Ticket[]
 }
 
 const TicketTable = ({ tickets }: Props) => {
@@ -25,7 +26,9 @@ const TicketTable = ({ tickets }: Props) => {
               <TableHead>
                 <div className="flex justify-center">Status</div>
               </TableHead>
-              <TableHead>Priority</TableHead>
+              <TableHead>
+                <div className="flex justify-center">Priority</div>
+              </TableHead>
               <TableHead>Created At</TableHead>
             </TableRow>
           </TableHeader>
@@ -39,7 +42,13 @@ const TicketTable = ({ tickets }: Props) => {
                         <TicketStatusBadge status={ticket.status} />
                       </div>
                     </TableCell>
-                    <TableCell>{ticket.priority}</TableCell>
+                    <TableCell>
+                      <div className="flex justify-center">
+                        <TicketPriority
+                          priority={ticket.priority}
+                        ></TicketPriority>
+                      </div>
+                    </TableCell>
                     <TableCell>{ticket.createdAt.toDateString()}</TableCell>
                   </TableRow>
                 ))
@@ -48,7 +57,7 @@ const TicketTable = ({ tickets }: Props) => {
         </Table>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TicketTable;
+export default TicketTable

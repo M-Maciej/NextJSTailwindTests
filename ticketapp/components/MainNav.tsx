@@ -1,6 +1,6 @@
-import Link from "next/link";
-import React from "react";
-import ToggleDarkMode from "./toggleDarkMode";
+import Link from "next/link"
+import React from "react"
+import ToggleDarkMode from "./toggleDarkMode"
 
 const MainNav = () => {
   return (
@@ -15,7 +15,7 @@ const MainNav = () => {
         <ToggleDarkMode />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default MainNav;
+export default MainNav

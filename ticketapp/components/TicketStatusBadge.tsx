@@ -1,9 +1,9 @@
-import React from "react";
-import { Badge } from "./ui/badge";
-import { Status } from "@prisma/client";
+import React from "react"
+import { Badge } from "./ui/badge"
+import { Status } from "@prisma/client"
 
 interface Props {
-  status: Status;
+  status: Status
 }
 
 const statusMap: Record<
@@ -13,7 +13,7 @@ const statusMap: Record<
   OPEN: { label: "Open", color: "bg-red-400" },
   STARTED: { label: "Started", color: "bg-blue-400" },
   CLOSED: { label: "Closed", color: "bg-green-400" },
-};
+}
 
 const TicketStatusBadge = ({ status }: Props) => {
   return (
@@ -22,7 +22,7 @@ const TicketStatusBadge = ({ status }: Props) => {
     >
       {statusMap[status].label}
     </Badge>
-  );
-};
+  )
+}
 
-export default TicketStatusBadge;
+export default TicketStatusBadge
