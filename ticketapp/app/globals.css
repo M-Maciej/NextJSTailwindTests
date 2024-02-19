@@ -1,9 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
-
-
 
 @layer base {
   :root {
@@ -52,8 +49,6 @@
   }
 }
 
-
- 
 @layer base {
   * {
     @apply border-border;
@@ -62,6 +57,6 @@
     @apply bg-background text-foreground;
   }
   a {
-    @apply hover:text-primary
+    @apply hover:text-primary;
   }
 }
